@@ -1,5 +1,5 @@
 <script>
-	import chartjs from 'chart.js/auto';
+	import Chart from 'chart.js/auto';
 	import { onMount } from 'svelte';
 
 	let chartValues = [20, 10, 5, 2, 20, 30, 45];
@@ -7,9 +7,9 @@
 	let ctx;
 	let chartCanvas;
 
-	onMount(async (promise) => {
+	onMount(async () => {
 		  ctx = chartCanvas.getContext('2d');
-			var chart = new chartjs(ctx, {
+			new Chart(ctx, {
 				type: 'line',
 				data: {
 						labels: chartLabels,
